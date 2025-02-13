@@ -4,7 +4,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 40px;
 	padding: 40px 0 0 64px;
+
+	@media only screen and (max-width: 69.375em) {
+		padding: 0 0 0 40px;
+	}
 
 	&__logo {
 		width: 48px;
@@ -19,10 +24,19 @@
 		position: relative;
 		left: 64px;
 		z-index: 999;
+
+		@media only screen and (max-width: 69.375em) {
+			display: none;
+		}
 	}
 }
 
 .nav {
+	@media only screen and (max-width: 69.375em) {
+		flex-grow: 1;
+		display: flex;
+	}
+
 	&__list {
 		display: flex;
 		align-items: center;
@@ -31,6 +45,12 @@
 		backdrop-filter: blur(80px);
 		background-color: rgba(255, 255, 255, 0.05);
 		font-family: "Barlow Condensed";
+
+		@media only screen and (max-width: 69.375em) {
+			flex-grow: 1;
+			justify-content: flex-end;
+			padding: 0 40px 0 159px;
+		}
 	}
 
 	&__item {
@@ -61,5 +81,16 @@
 	&__index {
 		margin-right: 12px;
 		font-weight: 700;
+		letter-spacing: 2.7px;
+
+		&--00 {
+			@media only screen and (max-width: 69.375em) {
+				display: none;
+			}
+		}
+	}
+
+	&__title {
+		letter-spacing: 2px;
 	}
 }

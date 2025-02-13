@@ -5,13 +5,23 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
-	gap: 30px;
+	gap: 66px;
 	padding: 128px 165px;
+
+	@media only screen and (max-width: 69.375em) {
+		align-self: flex-start;
+		grid-template-columns: 1fr;
+	}
 
 	&__text {
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
+
+		@media only screen and (max-width: 69.375em) {
+			align-items: center;
+			text-align: center;
+		}
 	}
 
 	&__heading {
@@ -43,5 +53,9 @@
 
 	&__action {
 		justify-self: end;
+
+		@media only screen and (max-width: 69.375em) {
+			justify-self: center;
+		}
 	}
 }

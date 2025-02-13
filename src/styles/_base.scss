@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	min-height: 100vh;
 	background-image: url("../assets/images/home/background-home-desktop.jpg");

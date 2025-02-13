@@ -1,0 +1,47 @@
+@use "./variables" as *;
+
+.home {
+	align-self: flex-end;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	gap: 30px;
+	padding: 128px 165px;
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	&__heading {
+		text-transform: uppercase;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		&--small {
+			color: $color-blue-300;
+			font-family: "Barlow Condensed";
+			font-size: 28px;
+			letter-spacing: 4px;
+		}
+
+		&--large {
+			color: $color-white;
+			font-family: "Bellefair", serif;
+			font-size: 144px;
+		}
+	}
+
+	&__description {
+		color: $color-blue-300;
+		font-family: "Barlow", sans-serif;
+		font-size: 18px;
+		line-height: 1.8;
+	}
+
+	&__action {
+		justify-self: end;
+	}
+}

@@ -36,7 +36,7 @@
 	&__item {
 		padding: 38.5px 0;
 		border-bottom: 3px solid transparent;
-		transition: border-bottom 0.2s ease;
+		transition: border-bottom 0.4s ease;
 
 		&:has(.nav__link:hover):not(.nav__active) {
 			border-bottom: 3px solid rgba(255, 255, 255, 0.5);
@@ -48,6 +48,7 @@
 	}
 
 	&__link {
+		&,
 		&:link,
 		&:hover,
 		&:active,

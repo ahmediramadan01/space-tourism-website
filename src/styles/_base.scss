@@ -15,6 +15,14 @@ body {
 	background-position: center;
 	display: flex;
 	flex-direction: column;
+
+	@media only screen and (max-width: 69.375em) {
+		background-image: url("../assets/images/home/background-home-tablet.jpg");
+	}
+
+	@media only screen and (max-width: 52.875em) {
+		background-image: url("../assets/images/home/background-home-mobile.jpg");
+	}
 }
 
 ul {
@@ -28,4 +36,10 @@ a {
 main {
 	flex-grow: 1;
 	display: flex;
+}
+
+button {
+	cursor: pointer;
+	background: transparent;
+	border: none;
 }

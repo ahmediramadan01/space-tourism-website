@@ -9,6 +9,23 @@
 		color: inherit;
 	}
 
+	&--nav {
+		display: none;
+
+		@media only screen and (max-width: 52.875em) {
+			display: block;
+		}
+	}
+
+	&--hide {
+		margin: 0 24px 80px auto;
+
+		& img {
+			width: 19.1px;
+			height: 19.1px;
+		}
+	}
+
 	&--home {
 		font-family: "Bellefair", serif;
 		font-size: 32px;
@@ -22,6 +39,12 @@
 		background-color: $color-white;
 		position: relative;
 		transition: all 0.1s ease;
+
+		@media only screen and (max-width: 52.875em) {
+			font-size: 18px;
+			width: 144px;
+			height: 144px;
+		}
 
 		&::after {
 			content: "";

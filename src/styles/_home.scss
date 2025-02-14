@@ -13,6 +13,11 @@
 		grid-template-columns: 1fr;
 	}
 
+	@media only screen and (max-width: 52.875em) {
+		padding: 24px;
+		gap: 120px;
+	}
+
 	&__text {
 		display: flex;
 		flex-direction: column;
@@ -35,12 +40,21 @@
 			font-family: "Barlow Condensed";
 			font-size: 28px;
 			letter-spacing: 4px;
+
+			@media only screen and (max-width: 52.875em) {
+				font-size: 16px;
+				letter-spacing: 2.4px;
+			}
 		}
 
 		&--large {
 			color: $color-white;
 			font-family: "Bellefair", serif;
 			font-size: 144px;
+
+			@media only screen and (max-width: 52.875em) {
+				font-size: 80px;
+			}
 		}
 	}
 
@@ -49,6 +63,10 @@
 		font-family: "Barlow", sans-serif;
 		font-size: 18px;
 		line-height: 1.8;
+
+		@media only screen and (max-width: 52.875em) {
+			font-size: 15px;
+		}
 	}
 
 	&__action {

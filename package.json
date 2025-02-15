@@ -2,7 +2,7 @@
 	"name": "space-tourism-website",
 	"version": "1.0.0",
 	"description": "single-page space tourism website",
-	"main": "entry.js",
+	"main": "controller.js",
 	"type": "module",
 	"scripts": {
 		"lint": "eslint ./src",

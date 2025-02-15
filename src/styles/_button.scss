@@ -12,7 +12,7 @@
 	&--nav {
 		display: none;
 
-		@media only screen and (max-width: 52.875em) {
+		@media only screen and (max-width: 55.0625em) {
 			display: block;
 		}
 	}
@@ -40,7 +40,7 @@
 		position: relative;
 		transition: all 0.1s ease;
 
-		@media only screen and (max-width: 52.875em) {
+		@media only screen and (max-width: 55.0625em) {
 			font-size: 18px;
 			width: 144px;
 			height: 144px;

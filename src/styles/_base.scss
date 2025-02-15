@@ -10,18 +10,52 @@ html {
 
 body {
 	min-height: 100vh;
-	background-image: url("../assets/images/home/background-home-desktop.jpg");
-	background-size: cover;
-	background-position: center;
 	display: flex;
 	flex-direction: column;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	transition: background-image 0.3s ease;
 
-	@media only screen and (max-width: 69.375em) {
-		background-image: url("../assets/images/home/background-home-tablet.jpg");
+	&:has(.home) {
+		background-image: url("../assets/images/home/background-home-desktop.jpg");
+		@media only screen and (max-width: 69.375em) {
+			background-image: url("../assets/images/home/background-home-tablet.jpg");
+		}
+		@media only screen and (max-width: 55.0625em) {
+			background-image: url("../assets/images/home/background-home-mobile.jpg");
+		}
 	}
 
-	@media only screen and (max-width: 52.875em) {
-		background-image: url("../assets/images/home/background-home-mobile.jpg");
+	&:has(.destination) {
+		background-image: url("../assets/images/destination/background-destination-desktop.jpg");
+		@media only screen and (max-width: 69.375em) {
+			background-image: url("../assets/images/destination/background-destination-tablet.jpg");
+		}
+		@media only screen and (max-width: 55.0625em) {
+			background-image: url("../assets/images/destination/background-destination-mobile.jpg");
+		}
+	}
+
+	&:has(.crew) {
+		background-image: url("../assets/images/crew/background-crew-desktop.jpg");
+		@media only screen and (max-width: 69.375em) {
+			background-image: url("../assets/images/crew/background-crew-tablet.jpg");
+		}
+		@media only screen and (max-width: 55.0625em) {
+			background-image: url("../assets/images/crew/background-crew-mobile.jpg");
+		}
+	}
+
+	&:has(.technology) {
+		background-image: url("../assets/images/technology/background-technology-desktop.jpg");
+		@media only screen and (max-width: 69.375em) {
+			background-image: url("../assets/images/technology/background-technology-tablet.jpg");
+		}
+		@media only screen and (max-width: 55.0625em) {
+			background-image: url("../assets/images/technology/background-technology-mobile.jpg");
+		}
 	}
 }
 

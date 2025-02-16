@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @font-face {
 	font-family: "Barlow";
 	src: url("../assets/fonts/Barlow-Regular.ttf");
@@ -11,4 +13,49 @@
 @font-face {
 	font-family: "Bellefair";
 	src: url("../assets/fonts/Bellefair-Regular.ttf");
+}
+
+.primary-heading {
+	font-family: "Barlow Condensed";
+	font-size: 28px;
+	color: $color-white;
+	text-transform: uppercase;
+	display: flex;
+	gap: 24px;
+	margin-bottom: 24px;
+
+	@media only screen and (max-width: 69.375em) {
+		font-size: 20px;
+	}
+
+	@media only screen and (width < 48em) {
+		font-size: 16px;
+		justify-content: center;
+	}
+
+	&__num {
+		letter-spacing: 4.73px;
+		font-weight: bold;
+		opacity: 0.25;
+
+		@media only screen and (max-width: 69.375em) {
+			letter-spacing: 3px;
+		}
+
+		@media only screen and (width < 48em) {
+			letter-spacing: 2.4px;
+		}
+	}
+
+	&__text {
+		letter-spacing: 4px;
+
+		@media only screen and (max-width: 69.375em) {
+			letter-spacing: 3px;
+		}
+
+		@media only screen and (width < 48em) {
+			letter-spacing: 2.4px;
+		}
+	}
 }

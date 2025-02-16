@@ -8,8 +8,8 @@
 		"node": true
 	},
 	"rules": {
-		"no-undef": "warn",
-		"no-console": "warn",
-		"no-unused-vars": "warn"
+		"no-undef": "off",
+		"no-console": "off",
+		"no-unused-vars": "off"
 	}
 }

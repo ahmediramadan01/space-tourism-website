@@ -11,7 +11,7 @@
 		padding: 0 0 0 40px;
 	}
 
-	@media only screen and (max-width: 55.0625em) {
+	@media only screen and (width < 48em) {
 		padding: 24px;
 	}
 
@@ -78,7 +78,7 @@
 			flex-grow: 1;
 		}
 
-		@media only screen and (max-width: 55.0625em) {
+		@media only screen and (width < 48em) {
 			display: none;
 		}
 
@@ -91,7 +91,7 @@
 
 			@media only screen and (max-width: 69.375em) {
 				justify-content: flex-end;
-				padding: 0 40px 0 159px;
+				padding: 0 40px;
 			}
 		}
 
@@ -107,11 +107,14 @@
 
 		& .nav__active {
 			border-bottom: 3px solid $color-white !important;
+		}
 
-			& .nav__index {
-				@media only screen and (max-width: 69.375em) {
-					display: none;
-				}
+		& .nav__index {
+			@media only screen and (width < 48em) {
+				display: none;
+			}
+			@media only screen and (max-width: 55.0625em) {
+				display: none;
 			}
 		}
 	}

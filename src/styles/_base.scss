@@ -23,7 +23,7 @@ body {
 		@media only screen and (max-width: 69.375em) {
 			background-image: url("../assets/images/home/background-home-tablet.jpg");
 		}
-		@media only screen and (max-width: 55.0625em) {
+		@media only screen and (width < 48em) {
 			background-image: url("../assets/images/home/background-home-mobile.jpg");
 		}
 	}

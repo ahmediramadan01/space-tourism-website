@@ -1,19 +1,19 @@
 export default class View {
-	#containerElement;
+	_containerElement;
 	constructor() {
-		this.#containerElement = document.querySelector(".main");
+		this._containerElement = document.querySelector(".main");
 	}
 
 	_clearContainerElement() {
-		this.#containerElement.innerHTML = "";
+		this._containerElement.innerHTML = "";
 	}
 
-	render() {
-		const markup = this._generateMarkup();
+	render(data = "") {
+		const markup = this._generateMarkup(data);
 
 		this._clearContainerElement();
 
-		this.#containerElement.insertAdjacentHTML("afterbegin", markup);
+		this._containerElement.insertAdjacentHTML("afterbegin", markup);
 	}
 
 	addHandlerRender(handler) {

@@ -1,9 +1,23 @@
 import View from "./view.js";
-import moonImage1 from "../../assets/images/destination/image-moon.png";
-import moonImage2 from "../../assets/images/destination/image-moon.webp";
+import moonPng from "../../assets/images/destination/image-moon.webp";
+import moonWebp from "../../assets/images/destination/image-moon.webp";
+import marsPng from "../../assets/images/destination/image-mars.webp";
+import marsWebp from "../../assets/images/destination/image-mars.webp";
+import europaPng from "../../assets/images/destination/image-europa.webp";
+import europaWebp from "../../assets/images/destination/image-europa.webp";
+import titanPng from "../../assets/images/destination/image-titan.webp";
+import titanWebp from "../../assets/images/destination/image-titan.webp";
+
+const imagesMap = {
+	moon: { png: moonPng, webp: moonWebp },
+	mars: { png: marsPng, webp: marsWebp },
+	europa: { png: europaPng, webp: europaWebp },
+	titan: { png: titanPng, webp: titanWebp },
+};
 
 class DestinationView extends View {
-	_generateMarkup() {
+	_generateMarkup(data) {
+		const images = imagesMap[data.name.toLowerCase()];
 		return `
     <section class="destination">
       <h1 class="primary-heading">
@@ -12,54 +26,61 @@ class DestinationView extends View {
       </h1>
       <div class="destination__content">
         <picture class="destination__image-container">
-          <source srcset="${moonImage1}" type="image/png" />
-          <source srcset=${moonImage2}" type="image/webp" />
+          <source srcset="${images.png}" type="image/png" />
+          <source srcset="${images.webp}" type="image/webp" />
           <img
-            src="${moonImage1}"
-            alt="Moon's image"
+            src="${images.png}"
+            alt="${data.name}'s image"
             class="destination__image" />
         </picture>
         <div class="destination__text-container">
-          <nav class="destination__nav">
             <ul class="destination__list">
               <li class="destination__item">
-                <a href="" class="destination__link destination__active">
+                <button data-index="0" class="destination__button ${data.name === "Moon" ? "destination__active" : ""}">
                   Moon
-                </a>
+                </button>
               </li>
               <li class="destination__item">
-                <a href="" class="destination__link">Mars</a>
+                <button data-index="1" class="destination__button ${data.name === "Mars" ? "destination__active" : ""}">Mars</button>
               </li>
               <li class="destination__item">
-                <a href="" class="destination__link">Europa</a>
+                <button data-index="2" class="destination__button ${data.name === "Europa" ? "destination__active" : ""}">Europa</button>
               </li>
               <li class="destination__item">
-                <a href="" class="destination__link">Titan</a>
+                <button data-index="3" class="destination__button ${data.name === "Titan" ? "destination__active" : ""}">Titan</button>
               </li>
             </ul>
-          </nav>
-          <h2 class="destination__title">Moon</h2>
+          <p role="heading" class="destination__title">${data.name}</p>
           <p class="destination__description">
-            See our planet as you've never seen it before. A perfect relaxing
-            trip away to help regain perspective and come back refreshed.
-            While you're there, take in some history by visiting the Luna 2
-            and Apollo 11 landing sites.
+            ${data.description}
           </p>
           <hr />
           <div class="destination__info">
             <div>
               <h3>AVG. DISTANCE</h3>
-              <p>384,400 km</p>
+              <p>${data.distance}</p>
             </div>
             <div>
               <h3>Est. travel time</h3>
-              <p>3 days</p>
+              <p>${data.travel}</p>
             </div>
           </div>
         </div>
       </div>
     </section>
     `;
+	}
+
+	addHandlerRender(handler) {
+		this._containerElement.addEventListener("click", function (event) {
+			if (event.target.closest(".destination__button")) {
+				event.preventDefault();
+
+				const index = +event.target.closest(".destination__button").dataset
+					.index;
+				handler(index);
+			}
+		});
 	}
 }
 

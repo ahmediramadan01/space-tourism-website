@@ -1,4 +1,5 @@
 import "../styles/main.scss";
+import { state } from "./model.js";
 import View from "./views/view.js";
 import navigationView from "./views/navigationView.js";
 import homeView from "./views/homeView.js";
@@ -15,7 +16,7 @@ const controlView = function () {
 			homeView.render();
 			break;
 		case "destination":
-			destinationView.render();
+			destinationView.render(state.destinations[0]);
 			break;
 		case "crew":
 			crewView.render();
@@ -29,8 +30,14 @@ const controlView = function () {
 	}
 };
 
+const controlDestination = function (index) {
+	destinationView.render(state.destinations[index]);
+};
+
 const init = function () {
 	const view = new View();
 	view.addHandlerRender(controlView);
+
+	destinationView.addHandlerRender(controlDestination);
 };
 init();

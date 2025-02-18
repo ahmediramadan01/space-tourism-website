@@ -1,0 +1,174 @@
+@use "./variables" as *;
+
+.technology {
+	color: white;
+	padding: 48px 0 48px 165px;
+
+	@media only screen and (max-width: 78.125em) {
+		padding: 48px 0 48px 82px;
+	}
+
+	@media only screen and (max-width: 69.375em) {
+		padding: 40px 0 40px;
+	}
+
+	@media only screen and (width < 48em) {
+		padding: 24px 0;
+	}
+
+	& .primary-heading {
+		@media only screen and (max-width: 69.375em) {
+			padding: 0 40px;
+		}
+	}
+
+	&__content {
+		margin-top: 90px;
+		display: flex;
+		gap: 32px;
+		align-items: center;
+
+		@media only screen and (max-width: 69.375em) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__content-container {
+		display: flex;
+		gap: 64px;
+
+		@media only screen and (max-width: 69.375em) {
+			flex-direction: column;
+			align-items: center;
+			gap: 40px;
+		}
+
+		@media only screen and (width < 48em) {
+			gap: 50px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+
+		@media only screen and (max-width: 69.375em) {
+			flex-direction: row;
+			gap: 16px;
+		}
+	}
+
+	&__button {
+		color: $color-white;
+		font-family: "Bellefair", serif;
+		border: solid 1px rgba(255, 255, 255, 0.25);
+		border-radius: 50%;
+		width: 80px;
+		height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 32px;
+		transition:
+			color 0.4s ease,
+			background-color 0.4s ease;
+
+		@media only screen and (max-width: 69.375em) {
+			width: 56px;
+			height: 56px;
+			font-size: 24px;
+		}
+
+		@media only screen and (width < 48em) {
+			width: 40px;
+			height: 40px;
+			font-size: 18px;
+		}
+	}
+
+	&__active {
+		color: $color-black;
+		background-color: $color-white;
+	}
+
+	&__button:hover:not(&__active) {
+		background-color: rgba(255, 255, 255, 0.5);
+		color: $color-black;
+	}
+
+	&__text-container {
+		@media only screen and (max-width: 69.375em) {
+			text-align: center;
+			padding: 0 40px;
+		}
+	}
+
+	&__title {
+		opacity: 0.5;
+		font-family: "Bellefair", serif;
+		font-size: 32px;
+		color: $color-white;
+		text-transform: uppercase;
+		margin-bottom: 16px;
+
+		@media only screen and (max-width: 69.375em) {
+			font-size: 24px;
+		}
+
+		@media only screen and (width < 48em) {
+			font-size: 18px;
+		}
+	}
+
+	&__name {
+		font-family: "Bellefair", serif;
+		font-size: 56px;
+		color: $color-white;
+		text-transform: uppercase;
+		margin-bottom: 24px;
+
+		@media only screen and (max-width: 69.375em) {
+			font-size: 40px;
+		}
+
+		@media only screen and (width < 48em) {
+			font-size: 24px;
+		}
+	}
+
+	&__description {
+		font-family: "Barlow", sans-serif;
+		font-size: 18px;
+		line-height: 1.8;
+		color: $color-blue-300;
+
+		@media only screen and (max-width: 69.375em) {
+			font-size: 16px;
+		}
+
+		@media only screen and (width < 48em) {
+			font-size: 15px;
+		}
+	}
+
+	& picture {
+		max-height: 600px;
+
+		@media only screen and (max-width: 69.375em) {
+			order: -1;
+			width: 100%;
+		}
+	}
+
+	&__image {
+		height: 100%;
+		object-fit: contain;
+		display: block;
+
+		@media only screen and (max-width: 69.375em) {
+			width: 100%;
+		}
+	}
+}

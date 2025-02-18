@@ -1,0 +1,151 @@
+@use "./variables" as *;
+
+.crew {
+	padding: 48px 165px;
+
+	@media only screen and (max-width: 78.125em) {
+		padding: 48px 82px;
+	}
+
+	@media only screen and (max-width: 69.375em) {
+		padding: 40px 40px 0;
+	}
+
+	@media only screen and (width < 48em) {
+		padding: 24px;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+		gap: 32px;
+
+		@media only screen and (max-width: 69.375em) {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+	}
+
+	&__content-container {
+		position: relative;
+
+		@media only screen and (max-width: 69.375em) {
+			margin-bottom: 48px;
+		}
+
+		@media only screen and (width < 48em) {
+			margin-bottom: 96px;
+		}
+	}
+
+	&__text-container {
+		font-family: "Bellefair", serif;
+		text-transform: uppercase;
+		color: $color-white;
+		padding-top: 125px;
+
+		@media only screen and (max-width: 69.375em) {
+			text-align: center;
+			padding-top: 48px;
+		}
+	}
+
+	&__role {
+		opacity: 0.5;
+		font-size: 32px;
+		margin-bottom: 16px;
+
+		@media only screen and (max-width: 69.375em) {
+			font-size: 24px;
+		}
+
+		@media only screen and (width < 48em) {
+			font-size: 18px;
+			margin-bottom: 8px;
+		}
+	}
+
+	&__name {
+		font-size: 56px;
+		margin-bottom: 24px;
+
+		@media only screen and (max-width: 69.375em) {
+			font-size: 40px;
+		}
+
+		@media only screen and (width < 48em) {
+			font-size: 24px;
+			margin-bottom: 24px;
+		}
+	}
+
+	&__bio {
+		font-family: "Barlow", sans-serif;
+		font-size: 18px;
+		line-height: 1.8;
+		color: $color-blue-300;
+
+		@media only screen and (max-width: 69.375em) {
+			font-size: 16px;
+		}
+
+		@media only screen and (width < 48em) {
+			font-size: 15px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 40px;
+		position: absolute;
+		bottom: 0;
+
+		@media only screen and (max-width: 69.375em) {
+			gap: 16px;
+			transform: translateX(50%);
+			right: 50%;
+			bottom: -48px;
+		}
+
+		@media only screen and (width < 48em) {
+			justify-content: center;
+			bottom: -96px;
+		}
+	}
+
+	&__button {
+		width: 15px;
+		height: 15px;
+		background-color: $color-white;
+		opacity: 0.17;
+		border-radius: 50%;
+		transition: opacity 0.4s ease;
+
+		@media only screen and (max-width: 69.375em) {
+			width: 10px;
+			height: 10px;
+		}
+	}
+
+	&__active {
+		opacity: 1;
+	}
+
+	&__button:hover:not(&__active) {
+		opacity: 0.5;
+	}
+
+	&__image {
+		height: 625px;
+
+		@media only screen and (max-width: 69.375em) {
+			height: 500px;
+		}
+
+		@media only screen and (width < 48em) {
+			height: 340px;
+		}
+	}
+}

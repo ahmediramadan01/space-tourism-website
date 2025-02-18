@@ -3,6 +3,10 @@
 .destination {
 	padding: 48px 165px;
 
+	@media only screen and (max-width: 78.125em) {
+		padding: 48px 82px;
+	}
+
 	@media only screen and (max-width: 69.375em) {
 		padding: 40px;
 	}

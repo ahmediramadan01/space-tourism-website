@@ -19,7 +19,7 @@ const controlView = function () {
 			destinationView.render(state.destinations[0]);
 			break;
 		case "crew":
-			crewView.render();
+			crewView.render(state.crew[0]);
 			break;
 		case "technology":
 			technologyView.render();
@@ -34,10 +34,16 @@ const controlDestination = function (index) {
 	destinationView.render(state.destinations[index]);
 };
 
+const controlCrew = function (index) {
+	crewView.render(state.crew[index]);
+};
+
 const init = function () {
 	const view = new View();
 	view.addHandlerRender(controlView);
 
 	destinationView.addHandlerRender(controlDestination);
+
+	crewView.addHandlerRender(controlCrew);
 };
 init();

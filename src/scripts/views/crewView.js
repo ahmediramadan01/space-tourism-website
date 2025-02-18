@@ -33,7 +33,7 @@ class CrewView extends View {
             </p>
           </div>
           <ul class="crew__list">
-              <li class="crew__item"><button data-index="0" class="crew__button ${data.name.split(" ")[0] === "Mark" ? "crew__active" : ""}"></button></li>
+              <li class="crew__item"><button data-index="0" class="crew__button ${data.name.split(" ")[0] === "Douglas" ? "crew__active" : ""}"></button></li>
               <li class="crew__item"><button data-index="1" class="crew__button ${data.name.split(" ")[0] === "Mark" ? "crew__active" : ""}"></button></li>
               <li class="crew__item"><button data-index="2" class="crew__button ${data.name.split(" ")[0] === "Victor" ? "crew__active" : ""}"></button></li>
               <li class="crew__item"><button data-index="3" class="crew__button ${data.name.split(" ")[0] === "Anousheh" ? "crew__active" : ""}"></button></li>

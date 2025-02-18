@@ -17,7 +17,6 @@ const imagesMap = {
 
 class CrewView extends View {
 	_generateMarkup(data) {
-		console.log(data);
 		return `
     <section class="crew">
       <h1 class="primary-heading">
@@ -60,8 +59,6 @@ class CrewView extends View {
 	addHandlerRender(handler) {
 		this._containerElement.addEventListener("click", function (event) {
 			if (event.target.closest(".crew__button")) {
-				event.preventDefault();
-
 				const index = +event.target.closest(".crew__button").dataset.index;
 				handler(index);
 			}

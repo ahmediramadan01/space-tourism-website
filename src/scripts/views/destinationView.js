@@ -9,15 +9,14 @@ import titanPng from "../../assets/images/destination/image-titan.webp";
 import titanWebp from "../../assets/images/destination/image-titan.webp";
 
 const imagesMap = {
-	moon: { png: moonPng, webp: moonWebp },
-	mars: { png: marsPng, webp: marsWebp },
-	europa: { png: europaPng, webp: europaWebp },
-	titan: { png: titanPng, webp: titanWebp },
+	Moon: { png: moonPng, webp: moonWebp },
+	Mars: { png: marsPng, webp: marsWebp },
+	Europa: { png: europaPng, webp: europaWebp },
+	Titan: { png: titanPng, webp: titanWebp },
 };
 
 class DestinationView extends View {
 	_generateMarkup(data) {
-		const images = imagesMap[data.name.toLowerCase()];
 		return `
     <section class="destination">
       <h1 class="primary-heading">
@@ -26,10 +25,10 @@ class DestinationView extends View {
       </h1>
       <div class="destination__content">
         <picture class="destination__image-container">
-          <source srcset="${images.png}" type="image/png" />
-          <source srcset="${images.webp}" type="image/webp" />
+          <source srcset="${imagesMap[data.name].png}" type="image/png" />
+          <source srcset="${imagesMap[data.name].webp}" type="image/webp" />
           <img
-            src="${images.png}"
+            src="${imagesMap[data.name].png}"
             alt="${data.name}'s image"
             class="destination__image" />
         </picture>
@@ -74,8 +73,6 @@ class DestinationView extends View {
 	addHandlerRender(handler) {
 		this._containerElement.addEventListener("click", function (event) {
 			if (event.target.closest(".destination__button")) {
-				event.preventDefault();
-
 				const index = +event.target.closest(".destination__button").dataset
 					.index;
 				handler(index);

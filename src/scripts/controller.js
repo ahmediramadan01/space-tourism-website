@@ -46,10 +46,10 @@ const init = function () {
 	const view = new View();
 	view.addHandlerRender(controlView);
 
-	destinationView.addHandlerRender(controlDestination);
+	destinationView.addHandlerRerender(controlDestination);
 
-	crewView.addHandlerRender(controlCrew);
+	crewView.addHandlerRerender(controlCrew);
 
-	technologyView.addHandlerRender(controlTechnology);
+	technologyView.addHandlerRerender(controlTechnology);
 };
 init();

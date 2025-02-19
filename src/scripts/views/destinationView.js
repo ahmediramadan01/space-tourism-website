@@ -16,6 +16,11 @@ const imagesMap = {
 };
 
 class DestinationView extends View {
+	constructor() {
+		super();
+		this._view = "destination";
+	}
+
 	_generateMarkup(data) {
 		return `
     <section class="destination">
@@ -68,16 +73,6 @@ class DestinationView extends View {
       </div>
     </section>
     `;
-	}
-
-	addHandlerRender(handler) {
-		this._containerElement.addEventListener("click", function (event) {
-			if (event.target.closest(".destination__button")) {
-				const index = +event.target.closest(".destination__button").dataset
-					.index;
-				handler(index);
-			}
-		});
 	}
 }
 

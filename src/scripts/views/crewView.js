@@ -16,6 +16,11 @@ const imagesMap = {
 };
 
 class CrewView extends View {
+	constructor() {
+		super();
+		this._view = "crew";
+	}
+
 	_generateMarkup(data) {
 		return `
     <section class="crew">
@@ -54,15 +59,6 @@ class CrewView extends View {
       </div>
     </section>
     `;
-	}
-
-	addHandlerRender(handler) {
-		this._containerElement.addEventListener("click", function (event) {
-			if (event.target.closest(".crew__button")) {
-				const index = +event.target.closest(".crew__button").dataset.index;
-				handler(index);
-			}
-		});
 	}
 }
 

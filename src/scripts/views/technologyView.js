@@ -13,6 +13,11 @@ const imagesMap = {
 };
 
 class TechnologyView extends View {
+	constructor() {
+		super();
+		this._view = "technology";
+	}
+
 	_generateMarkup(data) {
 		return `
     <section class="technology">
@@ -48,16 +53,6 @@ class TechnologyView extends View {
       </div>
     </section>
     `;
-	}
-
-	addHandlerRender(handler) {
-		this._containerElement.addEventListener("click", function (event) {
-			if (event.target.closest(".technology__button")) {
-				const index = +event.target.closest(".technology__button").dataset
-					.index;
-				handler(index);
-			}
-		});
 	}
 }
 

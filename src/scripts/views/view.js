@@ -1,5 +1,4 @@
 export default class View {
-	_containerElement;
 	constructor() {
 		this._containerElement = document.querySelector(".main");
 	}
@@ -20,5 +19,15 @@ export default class View {
 		["load", "hashchange"].forEach((event) =>
 			window.addEventListener(event, handler),
 		);
+	}
+
+	addHandlerRerender(handler) {
+		this._containerElement.addEventListener("click", (event) => {
+			if (event.target.closest(`.${this._view}__button`)) {
+				const dataIndex = +event.target.closest(`.${this._view}__button`)
+					.dataset.index;
+				handler(dataIndex);
+			}
+		});
 	}
 }

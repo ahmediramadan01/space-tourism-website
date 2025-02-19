@@ -46,9 +46,9 @@ class TechnologyView extends View {
             </p>
           </div>
         </div>
-        <picture>
+        <picture class="technology__image-container">
           <source media="(max-width: 69.375em)" srcset="${imagesMap[data.name.split(" ")[0]].landscape}" />
-          <img src="${imagesMap[data.name.split(" ")[0]].portrait}" alt="${data.name}'s image" class="technology__image" />
+          <img src="${imagesMap[data.name.split(" ")[0]].portrait}" height="auto" width="auto" alt="${data.name}'s image" class="technology__image" />
         </picture>
       </div>
     </section>
